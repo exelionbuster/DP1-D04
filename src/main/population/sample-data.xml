@@ -17,6 +17,43 @@
 
 	<import resource="conversion-service.xml" />
 	
+	<!-- InvestmentRounds -->
+	<bean id="investmentRound1" class="acme.entities.investmentRounds.InvestmentRound">
+		<property name="ticker" value="Ticker InvestmentRound 1"/>
+		<property name="creationDate" value="2020/05/01 12:30"/>
+		<property name="kind" value="SEED"/>
+		<property name="title" value="Title InvestmentRound 1"/>
+		<property name="description" value="Description InvestmentRound 1"/>
+		<property name="amount">
+			<ref bean="money01"/>
+		</property>
+		<property name="link" value="https://www.google.com/"/>
+	</bean>
+	
+	<bean id="investmentRound2" class="acme.entities.investmentRounds.InvestmentRound">
+		<property name="ticker" value="Ticker InvestmentRound 2"/>
+		<property name="creationDate" value="2020/04/12 11:35"/>
+		<property name="kind" value="ANGEL"/>
+		<property name="title" value="Title InvestmentRound 2"/>
+		<property name="description" value="Description InvestmentRound 2"/>
+		<property name="amount">
+			<ref bean="money02"/>
+		</property>
+		<property name="link" value="https://www.google.com/"/>
+	</bean>
+	
+	<bean id="investmentRound3" class="acme.entities.investmentRounds.InvestmentRound">
+		<property name="ticker" value="Ticker InvestmentRound 3"/>
+		<property name="creationDate" value="2020/02/21 14:10"/>
+		<property name="kind" value="SERIES-A"/>
+		<property name="title" value="Title InvestmentRound 3"/>
+		<property name="description" value="Description InvestmentRound 3"/>
+		<property name="amount">
+			<ref bean="money03"/>
+		</property>
+		<property name="link" value="https://www.google.com/"/>
+	</bean>
+	
 	<!-- ToledoBulletins -->
     <bean id="ToledoBulletin01"	class="acme.entities.bulletins.ToledoBulletin">
 		    <property name="author" value="Alberto Toledo Mayorga" />
