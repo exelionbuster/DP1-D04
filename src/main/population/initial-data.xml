@@ -20,6 +20,70 @@
 
 	<import resource="conversion-service.xml"/>
 	
+	<!-- Entrepreneurs -->
+	
+	<bean id="entrepreneur1UserAccount" class="acme.framework.entities.UserAccount">
+		<property name="username" value="entrepreneur 1"/>
+		<property name="password" value="entrepreneur 1"/>
+		<property name="enabled" value="true"/>
+		<property name="identity">
+			<bean class="acme.datatypes.UserIdentity">
+				<property name="name" value="Entrepreneur"/>
+				<property name="surname" value="One"/>
+				<property name="email" value="entrepreneur1@gmail.com"/>
+			</bean>
+		</property>
+		<property name="roles">
+			<list>
+				<ref bean="entrepreneur1Entrepreneur"/>
+				<ref bean="entrepreneur1Authenticated"/>
+			</list>
+		</property>
+	</bean>
+	
+	<bean name="entrepreneur1Entrepreneur" class="acme.entities.roles.Entrepreneur">
+		<property name="startUpName" value="Entrepreneur 1"/>
+		<property name="activitySector" value="Activity sector Entrepreneur 1"/>
+		<property name="qualifications" value="Qualifications Entrepreneur 1"/>
+		<property name="skills" value="Skills Entrepreneur 1"/>
+		<property name="userAccount" ref="entrepreneur1UserAccount"/>
+	</bean>
+	
+	<bean name="entrepreneur1Authenticated" class="acme.framework.entities.Authenticated">
+		<property name="userAccount" ref="entrepreneur1UserAccount"/>
+	</bean>
+	
+	<bean id="entrepreneur2UserAccount" class="acme.framework.entities.UserAccount">
+		<property name="username" value="entrepreneur 2"/>
+		<property name="password" value="entrepreneur 2"/>
+		<property name="enabled" value="true"/>
+		<property name="identity">
+			<bean class="acme.datatypes.UserIdentity">
+				<property name="name" value="Entrepreneur"/>
+				<property name="surname" value="Two"/>
+				<property name="email" value="entrepreneur2@gmail.com"/>
+			</bean>
+		</property>
+		<property name="roles">
+			<list>
+				<ref bean="entrepreneur2Entrepreneur"/>
+				<ref bean="entrepreneur2Authenticated"/>
+			</list>
+		</property>
+	</bean>
+	
+	<bean name="entrepreneur2Entrepreneur" class="acme.entities.roles.Entrepreneur">
+		<property name="startUpName" value="Entrepreneur 2"/>
+		<property name="activitySector" value="Activity sector Entrepreneur 2"/>
+		<property name="qualifications" value="Qualifications Entrepreneur 2"/>
+		<property name="skills" value="Skills Entrepreneur 2"/>
+		<property name="userAccount" ref="entrepreneur2UserAccount"/>
+	</bean>
+	
+	<bean name="entrepreneur2Authenticated" class="acme.framework.entities.Authenticated">
+		<property name="userAccount" ref="entrepreneur2UserAccount"/>
+	</bean>
+	
 	<!-- Anonymous user -->
 
 	<bean name="anonymousUserAccount" class="acme.framework.entities.UserAccount">
