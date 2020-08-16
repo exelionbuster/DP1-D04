@@ -37,7 +37,7 @@ public class EntrepreneurApplicationListByInvestmentRoundService implements Abst
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "ticker", "creationDate", "statment", "statement", "skills", "offer");
+		request.unbind(entity, model, "ticker", "creationDate");
 	}
 
 	@Override
