@@ -11,11 +11,10 @@
 entrepreneur.application.list.label.ticker = Ticker
 entrepreneur.application.list.label.creationDate = Fecha de creación
 
-entrepreneur.application.list.button.return = Volver
-
 entrepreneur.application.form.label.ticker = Ticker
 entrepreneur.application.form.label.creationDate = Fecha de creación
-entrepreneur.application.form.label.statment = Declaración
+entrepreneur.application.form.label.statement = Declaración
 entrepreneur.application.form.label.offer = Oferta
+entrepreneur.application.form.label.investor = Inversor 
 	
 entrepreneur.application.form.button.return = Volver

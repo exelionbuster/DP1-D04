@@ -747,7 +747,7 @@
 	<bean name="application1" class="acme.entities.applications.Application">
 		<property name="ticker" value="SSS-20-000001" />		
 		<property name="creationDate" value="2000/12/11 23:59" />
-		<property name="statment" value="example 1" />
+		<property name="statement" value="example 1" />
 		<property name="offer">
 			<ref bean="money07"/>
 		</property>
@@ -758,7 +758,7 @@
 	<bean name="application2" class="acme.entities.applications.Application">
 		<property name="ticker" value="SSS-20-000002" />		
 		<property name="creationDate" value="2000/12/11 23:59" />
-		<property name="statment" value="example 2" />
+		<property name="statement" value="example 2" />
 		<property name="offer">
 			<ref bean="money06"/>
 		</property>
@@ -769,7 +769,7 @@
 	<bean name="application3" class="acme.entities.applications.Application">
 		<property name="ticker" value="SSS-20-000003" />		
 		<property name="creationDate" value="2000/12/11 23:59" />
-		<property name="statment" value="example 3" />
+		<property name="statement" value="example 3" />
 		<property name="offer">
 			<ref bean="money04"/>
 		</property>

@@ -21,10 +21,5 @@
 			
 </acme:list>
 
-<acme:form-return code="entrepreneur.application.list.button.return"/>
-
-<button type="button" formmethod="get" onclick="javascript: redirect('entrepreneur/application/show?id=${id}')" class="btn btn-default">
-				<acme:message code="entrepreneur.application.list.button.return"/>				
-</button>	
 
 

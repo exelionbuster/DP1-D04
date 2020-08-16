@@ -11,11 +11,10 @@
 entrepreneur.application.list.label.ticker = Ticker
 entrepreneur.application.list.label.creationDate = Creation date
 
-entrepreneur.application.list.button.return = Return
-
 entrepreneur.application.form.label.ticker = Ticker
 entrepreneur.application.form.label.creationDate = Creation date
-entrepreneur.application.form.label.statment = Statment
+entrepreneur.application.form.label.statement = Statement
 entrepreneur.application.form.label.offer = Offer
+entrepreneur.application.form.label.investor = Investor
 	
 entrepreneur.application.form.button.return = Return

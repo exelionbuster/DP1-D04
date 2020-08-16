@@ -31,6 +31,6 @@ public class EntrepreneurApplicationController extends AbstractController<Entrep
 	@PostConstruct
 	private void initialise() {
 		super.addBasicCommand(BasicCommand.SHOW, this.showService);
-		super.addCustomCommand(CustomCommand.LIST_BY_INVESTMENT_ROUND, BasicCommand.LIST, this.listByInvestmentRoundService);
+		super.addCustomCommand(CustomCommand.LIST_MINE, BasicCommand.LIST, this.listByInvestmentRoundService);
 	}
 }

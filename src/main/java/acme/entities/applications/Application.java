@@ -39,7 +39,7 @@ public class Application extends DomainEntity {
 	private Date				creationDate;
 
 	@NotBlank
-	private String				statment;
+	private String				statement;
 
 	private Money				offer;
 
