@@ -797,8 +797,23 @@
 		<property name="investor" ref="investor2Investor" />
 		<property name="investmentRound" ref="investmentRound2" />
 	</bean>
-  
-  
+	
+	<!-- Forums -->
+	
+	<bean id="forum1" class="acme.entities.forums.Forum">
+		<property name="title" value="Investment round 1"/>
+		<property name="creationDate" value="2020/05/01 12:30" />
+		<property name="investmentRound" ref="investmentRound1"/>
+		<property name="owner" ref="entrepreneur1Authenticated"/>
+	</bean>
+	
+	<bean id="forum2" class="acme.entities.forums.Forum">
+		<property name="title" value="Investment round 2"/>
+		<property name="creationDate" value="2020/04/12 11:35" />
+		<property name="investmentRound" ref="investmentRound2"/>
+		<property name="owner" ref="entrepreneur2Authenticated"/>
+	</bean>
+	  
   <!-- Money -->
 
   <bean id="money01" class="acme.framework.datatypes.Money" >
