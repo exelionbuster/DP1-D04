@@ -97,6 +97,11 @@ master.menu.entrepreneur = Empresario
 master.menu.entrepreneur.investment-round = Rondas de inversión
 master.menu.entrepreneur.application.list = Lista de solicitudes por rondas de inversión
 
+# master.menu.investor ##########################################################
+
+master.menu.investor = Inversor
+master.menu.investor.application.list = Mis solicitudes
+
 # master.menu.user-account ####################################################
 
 master.menu.user-account = Cuenta
