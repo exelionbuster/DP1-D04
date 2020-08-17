@@ -813,7 +813,54 @@
 		<property name="investmentRound" ref="investmentRound2"/>
 		<property name="owner" ref="entrepreneur2Authenticated"/>
 	</bean>
-	  
+	
+	
+	<!-- Messages -->
+	<bean id="message1" class="acme.entities.messages.Message">
+		<property name="title" value="Can you all see this forum?"/>
+		<property name="creationDate" value="2020/05/02 11:35" />
+		<property name="tags" value=""/>
+		<property name="body" value="I don't know if I have to change some settings"/>
+		<property name="forum" ref="forum1"/>
+		<property name="sender" ref="entrepreneur1Authenticated"/>
+	</bean>
+	
+	<bean id="message2" class="acme.entities.messages.Message">
+		<property name="title" value="It's fine"/>
+		<property name="creationDate" value="2020/05/04 21:35" />
+		<property name="tags" value="help"/>
+		<property name="body" value="Don't worry, everyone involved in it can see it by default."/>
+		<property name="forum" ref="forum1"/>
+		<property name="sender" ref="bookkeeper1Authenticated"/>
+	</bean>
+	
+	<bean id="message3" class="acme.entities.messages.Message">
+		<property name="title" value="It's fine"/>
+		<property name="creationDate" value="2020/05/10 21:00" />
+		<property name="tags" value=""/>
+		<property name="body" value="Yes, I can confirm I could see it right after having my application accepted."/>
+		<property name="forum" ref="forum1"/>
+		<property name="sender" ref="investor1Authenticated"/>
+	</bean>
+	
+	<bean id="message4" class="acme.entities.messages.Message">
+		<property name="title" value="Skills?"/>
+		<property name="creationDate" value="2020/04/15 21:00" />
+		<property name="tags" value=""/>
+		<property name="body" value="You should update your skills record."/>
+		<property name="forum" ref="forum2"/>
+		<property name="sender" ref="investor2Authenticated"/>
+	</bean>
+	
+	<bean id="message5" class="acme.entities.messages.Message">
+		<property name="title" value="Skills?"/>
+		<property name="creationDate" value="2020/04/17 21:00" />
+		<property name="tags" value=""/>
+		<property name="body" value="Sorry, I chose the default ones. I will change them as soon as I have one."/>
+		<property name="forum" ref="forum2"/>
+		<property name="sender" ref="investor2Authenticated"/>
+	</bean>
+	
   <!-- Money -->
 
   <bean id="money01" class="acme.framework.datatypes.Money" >
