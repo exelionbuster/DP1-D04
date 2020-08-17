@@ -12,11 +12,15 @@
 
 package acme.features.entrepreneur.investmentRound;
 
+import java.util.Collection;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import acme.entities.activities.Activity;
 import acme.entities.investmentRounds.InvestmentRound;
 import acme.entities.roles.Entrepreneur;
+import acme.features.entrepreneur.activity.EntrepreneurActivityRepository;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
 import acme.framework.services.AbstractShowService;
@@ -27,7 +31,10 @@ public class EntrepreneurInvestmentRoundShowService implements AbstractShowServi
 	// Internal state ---------------------------------------------------------
 
 	@Autowired
-	EntrepreneurInvestmentRoundRepository repository;
+	EntrepreneurInvestmentRoundRepository	repository;
+
+	@Autowired
+	EntrepreneurActivityRepository			activityRepository;
 
 
 	// AbstractListService<Authenticated, Inquiry> interface --------------
@@ -44,6 +51,14 @@ public class EntrepreneurInvestmentRoundShowService implements AbstractShowServi
 		assert request != null;
 		assert entity != null;
 		assert model != null;
+
+		Collection<Activity> activities = this.activityRepository.findActivitiesByInvestmentRound(entity.getId());
+
+		if (!activities.isEmpty()) {
+			model.setAttribute("activities", activities);
+		} else {
+			model.setAttribute("activities", null);
+		}
 
 		request.unbind(entity, model, "ticker", "creationDate", "kind", "title", "description", "amount", "link");
 
