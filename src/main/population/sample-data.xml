@@ -674,7 +674,7 @@
 	
 	<!-- InvestmentRounds -->
 	<bean id="investmentRound1" class="acme.entities.investmentRounds.InvestmentRound">
-		<property name="ticker" value="Ticker Investment round 1"/>
+		<property name="ticker" value="ART-20-014683"/>
 		<property name="creationDate" value="2020/05/01 12:30"/>
 		<property name="kind" value="SEED"/>
 		<property name="title" value="Title Investment round 1"/>
@@ -687,7 +687,7 @@
 	</bean>
 	
 	<bean id="investmentRound2" class="acme.entities.investmentRounds.InvestmentRound">
-		<property name="ticker" value="Ticker Investment round 2"/>
+		<property name="ticker" value="SCI-20-652963"/>
 		<property name="creationDate" value="2020/04/12 11:35"/>
 		<property name="kind" value="ANGEL"/>
 		<property name="title" value="Title Investment round 2"/>
@@ -700,7 +700,7 @@
 	</bean>
 	
 	<bean id="investmentRound3" class="acme.entities.investmentRounds.InvestmentRound">
-		<property name="ticker" value="Ticker Investment round 3"/>
+		<property name="ticker" value="TEC-20-967332"/>
 		<property name="creationDate" value="2020/02/21 14:10"/>
 		<property name="kind" value="SERIES-A"/>
 		<property name="title" value="Title Investment round 3"/>
