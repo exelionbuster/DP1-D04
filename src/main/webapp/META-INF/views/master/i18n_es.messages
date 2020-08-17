@@ -55,6 +55,7 @@ master.menu.authenticated.overture.list-active		= Propuestas vigentes
 master.menu.authenticated.challenge.list-active		= Desafíos vigentes
 master.menu.authenticated.tool-record.list			= Herramientas
 master.menu.authenticated.technology-record.list 	= Tecnologías
+master.menu.authenticated.investment-round.list-active = Rondas de inversión vigentes
 
 # master.menu.administrator ###################################################
 
@@ -89,6 +90,12 @@ master.menu.provider.favourite-link = Enlace favorito
 
 master.menu.consumer = Consumidor
 master.menu.consumer.favourite-link = Enlace favorito
+
+# master.menu.entrepreneur ##########################################################
+
+master.menu.entrepreneur = Empresario
+master.menu.entrepreneur.investment-round = Rondas de inversión
+master.menu.entrepreneur.application.list = Lista de solicitudes por rondas de inversión
 
 # master.menu.user-account ####################################################
 

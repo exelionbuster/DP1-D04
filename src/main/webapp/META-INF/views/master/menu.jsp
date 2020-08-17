@@ -48,6 +48,7 @@
 			<acme:menu-suboption code="master.menu.authenticated.inquiry.list-active" action="/authenticated/inquiry/list-active" />
 			<acme:menu-suboption code="master.menu.authenticated.overture.list-active" action="/authenticated/overture/list-active" />
 			<acme:menu-suboption code="master.menu.authenticated.challenge.list-active" action="/authenticated/challenge/list-active" />
+			<acme:menu-suboption code="master.menu.authenticated.investment-round.list-active" action="/authenticated/investment-round/list-active"/>
 			<acme:menu-separator />
 			<acme:menu-suboption code="master.menu.authenticated.tool-record.list" action="/authenticated/tool-record/list" />
 			<acme:menu-suboption code="master.menu.authenticated.technology-record.list" action="/authenticated/technology-record/list" />
@@ -89,6 +90,12 @@
 		<acme:menu-option code="master.menu.consumer" access="hasRole('Consumer')">
 			<acme:menu-suboption code="master.menu.consumer.favourite-link" action="http://www.example.com/" />
 		</acme:menu-option>
+		
+		<acme:menu-option code="master.menu.entrepreneur" access="hasRole('Entrepreneur')">
+			<acme:menu-suboption code="master.menu.entrepreneur.investment-round" action="/entrepreneur/investment-round/list" />
+			<acme:menu-suboption code="master.menu.entrepreneur.application.list" action="/entrepreneur/application/list_mine"/>
+		</acme:menu-option>
+		
 	</acme:menu-left>
 
 	<acme:menu-right>
