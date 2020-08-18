@@ -1,4 +1,16 @@
 
+    create table `accounting_record` (
+       `id` integer not null,
+        `version` integer not null,
+        `body` varchar(255),
+        `creation_date` datetime(6),
+        `draft` bit not null,
+        `title` varchar(255),
+        `bookkeeper_id` integer not null,
+        `investment_round_id` integer not null,
+        primary key (`id`)
+    ) engine=InnoDB;
+
     create table `activity` (
        `id` integer not null,
         `version` integer not null,
@@ -320,6 +332,16 @@
 
     alter table `user_account` 
        add constraint UK_castjbvpeeus0r8lbpehiu0e4 unique (`username`);
+
+    alter table `accounting_record` 
+       add constraint `FK41jm4vk7runvmg5tderffrele` 
+       foreign key (`bookkeeper_id`) 
+       references `bookkeeper` (`id`);
+
+    alter table `accounting_record` 
+       add constraint `FKk1pmfnppwk0kav7xloy8u71uq` 
+       foreign key (`investment_round_id`) 
+       references `investment_round` (`id`);
 
     alter table `activity` 
        add constraint `FK1ufotopeofii4jlefyk9c7os5` 

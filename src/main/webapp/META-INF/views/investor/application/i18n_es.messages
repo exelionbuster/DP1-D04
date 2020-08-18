@@ -11,10 +11,12 @@
 	investor.application.list.label.ticker = Ticker
 	investor.application.list.label.creationDate = Fecha de creación
 	investor.application.list.label.offer = Oferta
+	entrepreneur.application.list.label.status = Estado
 
 	investor.application.form.label.ticker = Ticker
 	investor.application.form.label.creationDate = Fecha de creación
 	investor.application.form.label.statement = Declaración
+	investor.application.form.label.status = Estado
 	investor.application.form.label.offer = Oferta
 	
 	investor.application.form.button.return = Volver

@@ -19,6 +19,7 @@
 	<acme:list-column code="investor.application.list.label.ticker" path="ticker" width="35%"/>
 	<acme:list-column code="investor.application.list.label.creationDate" path="creationDate" width="35%"/>
 	<acme:list-column code="investor.application.list.label.offer" path="offer" width="35%"/>
+	<acme:list-column code="entrepreneur.application.list.label.status" path="status" width="35%"/>
 			
 </acme:list>
 
