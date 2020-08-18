@@ -10,65 +10,50 @@
  * they accept any liabilities with respect to them.
  */
 
-package acme.features.authenticated.investmentRound;
-
-import java.util.Collection;
+package acme.features.authenticated.activity;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.activities.Activity;
-import acme.entities.investmentRounds.InvestmentRound;
-import acme.features.authenticated.activity.AuthenticatedActivityRepository;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
 import acme.framework.entities.Authenticated;
 import acme.framework.services.AbstractShowService;
 
 @Service
-public class AuthenticatedInvestmentRoundShowService implements AbstractShowService<Authenticated, InvestmentRound> {
+public class AuthenticatedActivityShowService implements AbstractShowService<Authenticated, Activity> {
 
 	// Internal state ---------------------------------------------------------
 
 	@Autowired
-	AuthenticatedInvestmentRoundRepository	repository;
-
-	@Autowired
-	AuthenticatedActivityRepository			activityRepository;
+	AuthenticatedActivityRepository repository;
 
 
 	// AbstractListService<Authenticated, Inquiry> interface --------------
 
 	@Override
-	public boolean authorise(final Request<InvestmentRound> request) {
+	public boolean authorise(final Request<Activity> request) {
 		assert request != null;
 
 		return true;
 	}
 
 	@Override
-	public void unbind(final Request<InvestmentRound> request, final InvestmentRound entity, final Model model) {
+	public void unbind(final Request<Activity> request, final Activity entity, final Model model) {
 		assert request != null;
 		assert entity != null;
 		assert model != null;
 
-		Collection<Activity> activities = this.activityRepository.findActivitiesByInvestmentRound(entity.getId());
-
-		if (!activities.isEmpty()) {
-			model.setAttribute("activities", activities);
-		} else {
-			model.setAttribute("activities", null);
-		}
-
-		request.unbind(entity, model, "ticker", "creationDate", "kind", "title", "description", "amount", "link");
+		request.unbind(entity, model, "title", "startDate", "endDate", "budget");
 
 	}
 
 	@Override
-	public InvestmentRound findOne(final Request<InvestmentRound> request) {
+	public Activity findOne(final Request<Activity> request) {
 		assert request != null;
 
-		InvestmentRound result;
+		Activity result;
 		int id;
 
 		id = request.getModel().getInteger("id");
