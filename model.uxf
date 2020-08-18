@@ -875,16 +875,16 @@ published for &gt;</panel_attributes>
     <id>UMLClass</id>
     <coordinates>
       <x>1008</x>
-      <y>360</y>
+      <y>344</y>
       <w>288</w>
-      <h>64</h>
+      <h>80</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Entity&gt;&gt;
 Forum
 --
 + title: String {NotBlank}
 + creationMoment: Date {Temporal(TIMESTAMP), Past}
-</panel_attributes>
++ involvedUsers: Collection&lt;Authenticated&gt; {NotEmpty}</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -893,13 +893,13 @@ Forum
       <x>1136</x>
       <y>240</y>
       <w>64</w>
-      <h>136</h>
+      <h>120</h>
     </coordinates>
     <panel_attributes>lt=&lt;-x
 m1=1
 m2=0..*
 starts v</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;150.0</additional_attributes>
+    <additional_attributes>10.0;10.0;10.0;130.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
@@ -936,15 +936,15 @@ Message
     <id>Relation</id>
     <coordinates>
       <x>904</x>
-      <y>368</y>
+      <y>352</y>
       <w>120</w>
-      <h>88</h>
+      <h>104</h>
     </coordinates>
     <panel_attributes>lt=&lt;-x
 m1=1
 m2=0..*
 &lt; contains</panel_attributes>
-    <additional_attributes>130.0;20.0;10.0;20.0;10.0;90.0</additional_attributes>
+    <additional_attributes>130.0;20.0;10.0;20.0;10.0;110.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
@@ -1066,13 +1066,13 @@ creates &gt;</panel_attributes>
     <coordinates>
       <x>856</x>
       <y>216</y>
-      <w>256</w>
+      <w>264</w>
       <h>240</h>
     </coordinates>
     <panel_attributes>lt=&lt;-x
 m1=1
 m2=0..*
 &lt; posts</panel_attributes>
-    <additional_attributes>300.0;20.0;10.0;20.0;10.0;280.0</additional_attributes>
+    <additional_attributes>310.0;20.0;10.0;20.0;10.0;280.0</additional_attributes>
   </element>
 </diagram>

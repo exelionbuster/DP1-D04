@@ -20,8 +20,8 @@
 		<!--  Roles -->
 	<!-- Entrepreneurs -->
 	<bean id="entrepreneur1UserAccount" class="acme.framework.entities.UserAccount">
-		<property name="username" value="entrepreneur 1"/>
-		<property name="password" value="entrepreneur 1"/>
+		<property name="username" value="entrepreneur1"/>
+		<property name="password" value="entrepreneur1"/>
 		<property name="enabled" value="true"/>
 		<property name="identity">
 			<bean class="acme.datatypes.UserIdentity">
@@ -51,8 +51,8 @@
 	</bean>
 	
 	<bean id="entrepreneur2UserAccount" class="acme.framework.entities.UserAccount">
-		<property name="username" value="entrepreneur 2"/>
-		<property name="password" value="entrepreneur 2"/>
+		<property name="username" value="entrepreneur2"/>
+		<property name="password" value="entrepreneur2"/>
 		<property name="enabled" value="true"/>
 		<property name="identity">
 			<bean class="acme.datatypes.UserIdentity">
@@ -143,7 +143,7 @@
 		<property name="userAccount" ref="investor2UserAccount" />
 	</bean>
 	
-	<!-- Entrepreneurs -->
+	<!-- Bookkeepers -->
 	<bean id="bookkeeper1UserAccount" class="acme.framework.entities.UserAccount">
 		<property name="username" value="bookkeeper1"/>
 		<property name="password" value="bookkeeper1"/>
@@ -769,6 +769,7 @@
 		<property name="ticker" value="SSS-20-000001" />		
 		<property name="creationDate" value="2000/12/11 23:59" />
 		<property name="statement" value="example 1" />
+		<property name="status" value="accepted" />
 		<property name="offer">
 			<ref bean="money07"/>
 		</property>
@@ -780,6 +781,7 @@
 		<property name="ticker" value="SSS-20-000002" />		
 		<property name="creationDate" value="2000/12/11 23:59" />
 		<property name="statement" value="example 2" />
+		<property name="status" value="accepted" />
 		<property name="offer">
 			<ref bean="money06"/>
 		</property>
@@ -791,6 +793,7 @@
 		<property name="ticker" value="SSS-20-000003" />		
 		<property name="creationDate" value="2000/12/11 23:59" />
 		<property name="statement" value="example 3" />
+		<property name="status" value="accepted" />
 		<property name="offer">
 			<ref bean="money04"/>
 		</property>
@@ -805,6 +808,13 @@
 		<property name="creationDate" value="2020/05/01 12:30" />
 		<property name="investmentRound" ref="investmentRound1"/>
 		<property name="owner" ref="entrepreneur1Authenticated"/>
+		<property name="involvedUsers">
+			<list>
+				<ref bean="entrepreneur1Authenticated"/>
+				<ref bean="bookkeeper1Authenticated"/>
+				<ref bean="investor1Authenticated"/>
+			</list>
+		</property>
 	</bean>
 	
 	<bean id="forum2" class="acme.entities.forums.Forum">
@@ -812,6 +822,12 @@
 		<property name="creationDate" value="2020/04/12 11:35" />
 		<property name="investmentRound" ref="investmentRound2"/>
 		<property name="owner" ref="entrepreneur2Authenticated"/>
+		<property name="involvedUsers">
+			<list>
+				<ref bean="entrepreneur2Authenticated"/>
+				<ref bean="investor2Authenticated"/>
+			</list>
+		</property>
 	</bean>
 	
 	
@@ -858,7 +874,7 @@
 		<property name="tags" value=""/>
 		<property name="body" value="Sorry, I chose the default ones. I will change them as soon as I have one."/>
 		<property name="forum" ref="forum2"/>
-		<property name="sender" ref="investor2Authenticated"/>
+		<property name="sender" ref="entrepreneur2Authenticated"/>
 	</bean>
 	
   <!-- Money -->
