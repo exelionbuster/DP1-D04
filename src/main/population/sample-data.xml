@@ -143,7 +143,7 @@
 		<property name="userAccount" ref="investor2UserAccount" />
 	</bean>
 	
-	<!-- Entrepreneurs -->
+	<!-- Bookkeepers -->
 	<bean id="bookkeeper1UserAccount" class="acme.framework.entities.UserAccount">
 		<property name="username" value="bookkeeper1"/>
 		<property name="password" value="bookkeeper1"/>
@@ -796,6 +796,44 @@
 		</property>
 		<property name="investor" ref="investor2Investor" />
 		<property name="investmentRound" ref="investmentRound2" />
+	</bean>
+	
+	<!-- AccountingRecords -->
+	
+	<bean name="accountingRecord01" class="acme.entities.accountingRecords.AccountingRecord">
+		<property name="title" value="Mi contabilidad" />
+		<property name="draft" value="false" />
+		<property name="creationDate" value="2020/08/11 23:00" />
+		<property name="body" value="Aquí escribo sobre mi contabilidad" />
+		<property name="bookkeeper" ref="bookkeeper1Bookkeeper" />
+		<property name="investmentRound" ref="investmentRound1" />
+	</bean>
+	
+	<bean name="accountingRecord02" class="acme.entities.accountingRecords.AccountingRecord">
+		<property name="title" value="Mi contabilidad 2" />
+		<property name="draft" value="false" />
+		<property name="creationDate" value="2020/08/12 23:00" />
+		<property name="body" value="Llevar una buena contabilidad es importante" />
+		<property name="bookkeeper" ref="bookkeeper1Bookkeeper" />
+		<property name="investmentRound" ref="investmentRound1" />
+	</bean>
+	
+	<bean name="accountingRecord03" class="acme.entities.accountingRecords.AccountingRecord">
+		<property name="title" value="Mi contabilidad 3" />
+		<property name="draft" value="true" />
+		<property name="creationDate" value="2020/08/13 23:00" />
+		<property name="body" value="Con esta contabilidad no tendré problemas" />
+		<property name="bookkeeper" ref="bookkeeper1Bookkeeper" />
+		<property name="investmentRound" ref="investmentRound1" />
+	</bean>
+	
+	<bean name="accountingRecord04" class="acme.entities.accountingRecords.AccountingRecord">
+		<property name="title" value="My accounting record" />
+		<property name="draft" value="false" />
+		<property name="creationDate" value="2020/08/10 22:00" />
+		<property name="body" value="Con esta contabilidad no tendré problemas" />
+		<property name="bookkeeper" ref="bookkeeper2Bookkeeper" />
+		<property name="investmentRound" ref="investmentRound3" />
 	</bean>
   
   
