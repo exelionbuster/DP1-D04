@@ -47,14 +47,15 @@ master.menu.anonymous.bulletin.toledo.list	 	= Toledo's bulletins
 
 # master.menu.authenticated ###################################################
 
-master.menu.authenticated 							= Authenticated
-master.menu.authenticated.notice.list-active		= Active notices
-master.menu.authenticated.inquiry.list-active 		= Active inquiries
-master.menu.authenticated.overture.list-active 		= Active overtures
-master.menu.authenticated.challenge.list-active 	= Active challenges
-master.menu.authenticated.tool-record.list 			= Tools
-master.menu.authenticated.technology-record.list 	= Technologies
-
+master.menu.authenticated 								= Authenticated
+master.menu.authenticated.investment-round.list-active 	= Active investment rounds
+master.menu.authenticated.forum.list					= Forums
+master.menu.authenticated.notice.list-active			= Active notices
+master.menu.authenticated.inquiry.list-active 			= Active inquiries
+master.menu.authenticated.overture.list-active 			= Active overtures
+master.menu.authenticated.challenge.list-active 		= Active challenges
+master.menu.authenticated.tool-record.list 				= Tools
+master.menu.authenticated.technology-record.list 		= Technologies
 
 # master.menu.administrator ###################################################
 
@@ -89,6 +90,17 @@ master.menu.provider.favourite-link = Favourite link
 
 master.menu.consumer = Consumer
 master.menu.consumer.favourite-link = Favourite link
+
+# master.menu.entrepreneur ##########################################################
+
+master.menu.entrepreneur = Entrepreneur
+master.menu.entrepreneur.investment-round = Investment rounds
+master.menu.entrepreneur.application.list = List applications by investment rounds
+
+# master.menu.investor ##########################################################
+
+master.menu.investor = Investor
+master.menu.investor.application.list = My applications 
 
 # master.menu.user-account ####################################################
 

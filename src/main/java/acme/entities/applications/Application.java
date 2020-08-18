@@ -3,6 +3,7 @@ package acme.entities.applications;
 
 import java.util.Date;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
@@ -11,6 +12,7 @@ import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Past;
+import javax.validation.constraints.Pattern;
 
 import acme.entities.investmentRounds.InvestmentRound;
 import acme.entities.roles.Investor;
@@ -30,8 +32,8 @@ public class Application extends DomainEntity {
 
 	// Attributes ---------------------------------------------
 
+	@Column(unique = true)
 	@NotBlank
-	//@Pattern(regexp = "")
 	private String				ticker;
 
 	@Temporal(TemporalType.TIMESTAMP)
@@ -39,7 +41,11 @@ public class Application extends DomainEntity {
 	private Date				creationDate;
 
 	@NotBlank
-	private String				statment;
+	private String				statement;
+
+	@NotBlank
+	@Pattern(regexp = "^(pending|accepted|rejected)$")
+	private String				status;
 
 	private Money				offer;
 
