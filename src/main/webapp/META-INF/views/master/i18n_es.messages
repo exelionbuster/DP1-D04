@@ -48,14 +48,15 @@ master.menu.anonymous.bulletin.toledo.list	 	= Boletines de Toledo
 
 # master.menu.authenticated ###################################################
 
-master.menu.authenticated 							= Autenticado
-master.menu.authenticated.notice.list-active		= Noticias vigentes
-master.menu.authenticated.inquiry.list-active		= Consultas vigentes
-master.menu.authenticated.overture.list-active		= Propuestas vigentes
-master.menu.authenticated.challenge.list-active		= Desafíos vigentes
-master.menu.authenticated.tool-record.list			= Herramientas
-master.menu.authenticated.technology-record.list 	= Tecnologías
-master.menu.authenticated.investment-round.list-active = Rondas de inversión vigentes
+master.menu.authenticated 								= Autenticado
+master.menu.authenticated.investment-round.list-active 	= Rondas de inversión vigentes
+master.menu.authenticated.forum.list					= Foros
+master.menu.authenticated.notice.list-active			= Noticias vigentes
+master.menu.authenticated.inquiry.list-active			= Consultas vigentes
+master.menu.authenticated.overture.list-active			= Propuestas vigentes
+master.menu.authenticated.challenge.list-active			= Desafíos vigentes
+master.menu.authenticated.tool-record.list				= Herramientas
+master.menu.authenticated.technology-record.list 		= Tecnologías
 
 # master.menu.administrator ###################################################
 

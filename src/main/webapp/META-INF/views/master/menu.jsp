@@ -50,6 +50,8 @@
 			<acme:menu-suboption code="master.menu.authenticated.challenge.list-active" action="/authenticated/challenge/list-active" />
 			<acme:menu-suboption code="master.menu.authenticated.investment-round.list-active" action="/authenticated/investment-round/list-active"/>
 			<acme:menu-separator />
+			<acme:menu-suboption code="master.menu.authenticated.forum.list" action="/authenticated/forum/list"/>
+			<acme:menu-separator />
 			<acme:menu-suboption code="master.menu.authenticated.tool-record.list" action="/authenticated/tool-record/list" />
 			<acme:menu-suboption code="master.menu.authenticated.technology-record.list" action="/authenticated/technology-record/list" />
 
