@@ -32,6 +32,15 @@ public interface AdministratorDashboardRepository extends AbstractRepository {
 	@Query("select min(ao.maxMoney.amount), max(ao.maxMoney.amount), avg(ao.maxMoney.amount), stddev(ao.maxMoney.amount) from Overture ao")
 	Collection<Object[]> activeOverturesMaxMoneyStats();
 
+	@Query("select avg(select count(ir) from InvestmentRound ir where e.id = ir.entrepreneur) from Entrepreneur e")
+	Double invRoundPerEntrep();
+
+	@Query("select avg(select count(a) from Application a where e.id = a.investmentRound.entrepreneur) from Entrepreneur e")
+	Double appPerEntrep();
+
+	@Query("select avg(select count(a) from Application a where i.id = a.investor) from Investor i")
+	Double appPerInvestor();
+
 	@Query("select tr.activitySector, count(tr) from TechnologyRecord tr group by tr.activitySector")
 	Collection<Object[]> techRecordsBySector();
 
@@ -43,4 +52,10 @@ public interface AdministratorDashboardRepository extends AbstractRepository {
 
 	@Query("select count(tr) from ToolRecord tr group by tr.openSource")
 	Collection<Integer> toolRecordsLicence();
+
+	@Query("select ir.kind, count(ir) from InvestmentRound ir group by ir.kind")
+	Collection<Object[]> invRoundsByKind();
+
+	@Query("select a.status, count(a) from Application a group by a.status")
+	Collection<Object[]> appByStatus();
 }

@@ -43,7 +43,6 @@ text-align: center}
 			<acme:print value="${ numberOfTechnologyRecords}"/>
 		</td>
 	</tr>
-	<!-- 
 	<tr>
 		<td>
 			<acme:message code="administrator.dashboard.form.table.cell.total-tool-records"/>
@@ -52,7 +51,6 @@ text-align: center}
 			<acme:print value="${ numberOfToolRecords}"/>
 		</td>
 	</tr>
-	-->
 </table>
 <br />
 <br />
@@ -220,6 +218,35 @@ text-align: center}
 </table>
 <br />
 <br />
+<table>
+	<tr>
+		<td>
+			<acme:message code="administrator.dashboard.form.table.cell.inv-round-per-entrep"/>
+		</td>
+		<td>
+			<acme:print value="${ invRoundPerEntrep}"/>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<acme:message code="administrator.dashboard.form.table.cell.app-per-entrep"/>
+		</td>
+		<td>
+			<acme:print value="${ appPerEntrep}"/>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<acme:message code="administrator.dashboard.form.table.cell.app-per-investor"/>
+		</td>
+		<td>
+			<acme:print value="${ appPerInvestor}"/>
+		</td>
+	</tr>
+</table>
+<br />
+<br />
+
 <h2></h2>
 <div class="containerL">
 	<b><acme:message code="administrator.dashboard.form.chart.title.techs-by-sector"/></b>
@@ -418,3 +445,96 @@ text-align: center}
 		});
 	});
 </script>
+<br />
+<br />
+<br />
+<br />
+
+<h2></h2>
+<div class="containerL">
+	<b><acme:message code="administrator.dashboard.form.chart.title.inv-round-by-kind"/></b>
+	<br /><br />
+	<canvas id="chart-area5"></canvas>
+</div>
+
+<div class="containerR">
+	<b><acme:message code="administrator.dashboard.form.chart.title.apps-by-status"/></b>
+	<br /><br />
+	<canvas id="chart-area6" ></canvas>
+</div>
+
+<script type="text/javascript">
+	$(document).ready(function() {
+		var data = {
+			labels : [
+				<jstl:forEach var="kind" items="${invRoundKinds}" varStatus="loop">
+					"<jstl:out value="${kind}"/>"
+					<jstl:if test="${!loop.last}"> ,</jstl:if>
+				</jstl:forEach>		
+			],
+			datasets: [
+				{
+					data: [
+						<jstl:forEach var="invRCount" items="${invRoundsByKind}" varStatus="loop">
+							<jstl:out value="${invRCount}"/>
+							<jstl:if test="${!loop.last}"> ,</jstl:if>
+							
+						</jstl:forEach>
+					],
+					backgroundColor : "blue"
+				}
+			]
+		};
+		var options = {
+				legend:{display:false},
+				responsive : true
+			};
+		var canvas, context;
+		
+		canvas = document.getElementById("chart-area5");
+		context = canvas.getContext("2d");
+		new Chart(context, {
+			type : "bar",
+			data : data,
+			options : options
+		});
+	});
+</script>
+
+<script type="text/javascript">
+	$(document).ready(function() {
+		var data = {
+				labels : [
+					<jstl:forEach var="status" items="${appStatus}" varStatus="loop">
+						"<jstl:out value="${status}"/>"
+						<jstl:if test="${!loop.last}"> ,</jstl:if>
+					</jstl:forEach>		
+				],
+			datasets: [
+				{
+					data: [
+						<jstl:forEach var="appCount" items="${appByStatus}" varStatus="loop">
+							<jstl:out value="${appCount}"/>
+							<jstl:if test="${!loop.last}"> ,</jstl:if>							
+						</jstl:forEach>
+					],
+					backgroundColor : [	"green", "red", "gray" ]
+				}
+			]
+		};
+		var options = {
+				legend:{display:false},
+				responsive : true
+			};
+		var canvas, context;
+		
+		canvas = document.getElementById("chart-area6");
+		context = canvas.getContext("2d");
+		new Chart(context, {
+			type : "bar",
+			data : data,
+			options : options
+		});
+	});
+</script>
+
