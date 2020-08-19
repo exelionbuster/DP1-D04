@@ -30,4 +30,7 @@ public class Configuration extends DomainEntity {
 	@NotBlank
 	private String				activitySectors;
 
+	@NotBlank
+	private String				invRoundKinds;
+
 }

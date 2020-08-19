@@ -28,4 +28,7 @@ public interface AdministratorTechnologyRecordRepository extends AbstractReposit
 
 	@Query("select cr from TechnologyRecord cr where cr.id = ?1")
 	TechnologyRecord findOneById(int id);
+
+	@Query("select c.activitySectors from Configuration c")
+	String findActivitySectors();
 }

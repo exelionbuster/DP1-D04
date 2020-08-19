@@ -12,6 +12,11 @@
 
 package acme.features.administrator.toolRecord;
 
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Set;
+import java.util.stream.Collectors;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -44,6 +49,12 @@ public class AdministratorToolRecordShowService implements AbstractShowService<A
 		assert request != null;
 		assert entity != null;
 		assert model != null;
+
+		Set<String> sectors = new HashSet<String>(Arrays.asList(this.repository.findActivitySectors().split(";")));
+		sectors = sectors.stream().map(String::trim).collect(Collectors.toSet());
+		sectors.remove(entity.getActivitySector());
+
+		model.setAttribute("sectors", sectors);
 
 		request.unbind(entity, model, "title", "activitySector", "inventor", "description", "webSite", "email", "openSource", "stars");
 

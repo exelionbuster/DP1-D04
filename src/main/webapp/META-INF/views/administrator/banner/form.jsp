@@ -10,17 +10,20 @@
 	<acme:form-textbox code="administrator.banner.form.label.target" path="target"/>
 	
 	<acme:form-select code="administrator.banner.form.label.credit-card" path="creditCardId">
+		<jstl:if test="${creditCardId == null}">
+			<acme:form-option code="administrator.banner.form.credit-card.default" value=""/>
+		</jstl:if>
 		<jstl:if test="${creditCardId != null}">
 			<acme:form-option code="${creditCardNumber}" value="${creditCardId}"/>
 		</jstl:if>
-		<acme:form-option code="administrator.banner.form.credit-card.default" value=""/>
 		<jstl:forEach items="${creditCards}"  var="creditCard">
 			<acme:form-option code="${creditCard.number}" value="${creditCard.id}"/>
 		</jstl:forEach>
+		<jstl:if test="${creditCardId != null}">
+			<acme:form-option code="administrator.banner.form.credit-card.default" value=""/>
+		</jstl:if>
 	</acme:form-select>
-	
-	
-	<jstl:if test="${creditCardId != null}">
+	<jstl:if test="${creditCardId != null and creditCardId != '' and command != 'create'}">
 		<acme:form-return code="administrator.banner.form.button.credit-card" action="/administrator/credit-card/show?id=${creditCardId}"/>
 		<br>
 		<br>

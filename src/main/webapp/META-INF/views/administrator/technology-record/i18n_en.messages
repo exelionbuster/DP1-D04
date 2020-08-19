@@ -21,8 +21,9 @@ administrator.technology-record.form.label.website = Website:
 administrator.technology-record.form.label.email = E-mail:
 administrator.technology-record.form.label.open-source = Open Source
 administrator.technology-record.form.label.stars = Stars:
-	
 
+administrator.company-record.form.nostars			= This technology has no stars yet
+	
 administrator.technology-record.form.button.create = Create
 administrator.technology-record.form.button.update = Update
 administrator.technology-record.form.button.delete = Delete

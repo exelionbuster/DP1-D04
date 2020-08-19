@@ -28,4 +28,7 @@ public interface AdministratorToolRecordRepository extends AbstractRepository {
 
 	@Query("select tr from ToolRecord tr where tr.id = ?1")
 	ToolRecord findOneById(int id);
+
+	@Query("select c.activitySectors from Configuration c")
+	String findActivitySectors();
 }
