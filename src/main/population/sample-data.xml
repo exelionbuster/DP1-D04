@@ -18,6 +18,107 @@
 	<import resource="conversion-service.xml" />
 	
 		<!--  Roles -->
+		
+			<!-- Patrons -->
+	<bean id="patron1UserAccount" class="acme.framework.entities.UserAccount">
+		<property name="username" value="patron1"/>
+		<property name="password" value="patron1"/>
+		<property name="enabled" value="true"/>
+		<property name="identity">
+			<bean class="acme.datatypes.UserIdentity">
+				<property name="name" value="Patron"/>
+				<property name="surname" value="One"/>
+				<property name="email" value="patron1@gmail.com"/>
+			</bean>
+		</property>
+		<property name="roles">
+			<list>
+				<ref bean="patron1Patron"/>
+				<ref bean="patron1Authenticated"/>
+			</list>
+		</property>
+	</bean>
+	
+	<bean name="patron1Patron" class="acme.entities.roles.Patron">
+		<property name="organisation" value="Patron Organisation 1"/>
+		<property name="activitySector" value="Activity sector Patron 1"/>
+		<property name="profile" value="Profile Patron 1"/>
+		<property name="creditCard">
+			<ref bean="creditCard01"/>
+		</property>
+		<property name="userAccount" ref="patron1UserAccount"/>
+	</bean>
+	
+	<bean name="patron1Authenticated" class="acme.framework.entities.Authenticated">
+		<property name="userAccount" ref="patron1UserAccount"/>
+	</bean>
+	
+		<bean id="patron2UserAccount" class="acme.framework.entities.UserAccount">
+		<property name="username" value="patron2"/>
+		<property name="password" value="patron2"/>
+		<property name="enabled" value="true"/>
+		<property name="identity">
+			<bean class="acme.datatypes.UserIdentity">
+				<property name="name" value="Patron"/>
+				<property name="surname" value="Two"/>
+				<property name="email" value="patron2@gmail.com"/>
+			</bean>
+		</property>
+		<property name="roles">
+			<list>
+				<ref bean="patron2Patron"/>
+				<ref bean="patron2Authenticated"/>
+			</list>
+		</property>
+	</bean>
+	
+	<bean name="patron2Patron" class="acme.entities.roles.Patron">
+		<property name="organisation" value="Patron Organisation 2"/>
+		<property name="activitySector" value="Activity sector Patron 2"/>
+		<property name="profile" value="Profile Patron 2"/>
+		<property name="creditCard">
+			<ref bean="creditCard02"/>
+		</property>
+		<property name="userAccount" ref="patron2UserAccount"/>
+	</bean>
+	
+	<bean name="patron2Authenticated" class="acme.framework.entities.Authenticated">
+		<property name="userAccount" ref="patron2UserAccount"/>
+	</bean>
+	
+		<bean id="patron3UserAccount" class="acme.framework.entities.UserAccount">
+		<property name="username" value="patron3"/>
+		<property name="password" value="patron3"/>
+		<property name="enabled" value="true"/>
+		<property name="identity">
+			<bean class="acme.datatypes.UserIdentity">
+				<property name="name" value="Patron"/>
+				<property name="surname" value="Three"/>
+				<property name="email" value="patron3@gmail.com"/>
+			</bean>
+		</property>
+		<property name="roles">
+			<list>
+				<ref bean="patron3Patron"/>
+				<ref bean="patron3Authenticated"/>
+			</list>
+		</property>
+	</bean>
+	
+	<bean name="patron3Patron" class="acme.entities.roles.Patron">
+		<property name="organisation" value="Patron Organisation 3"/>
+		<property name="activitySector" value="Activity sector Patron 3"/>
+		<property name="profile" value="Profile Patron 3"/>
+		<property name="creditCard">
+			<ref bean="creditCard03"/>
+		</property>
+		<property name="userAccount" ref="patron3UserAccount"/>
+	</bean>
+	
+	<bean name="patron3Authenticated" class="acme.framework.entities.Authenticated">
+		<property name="userAccount" ref="patron3UserAccount"/>
+	</bean>
+		
 	<!-- Entrepreneurs -->
 	<bean id="entrepreneur1UserAccount" class="acme.framework.entities.UserAccount">
 		<property name="username" value="entrepreneur1"/>
@@ -618,6 +719,7 @@
   	<property name="brand" value="Visa" />
   	<property name="expirationDate" value="2025/06/28 00:00" />
   	<property name="cvv" value="000" />
+  	<property name="patron" ref="patron1Patron" />
   </bean>
   
   <bean id="creditCard02" class="acme.entities.creditCards.CreditCard" >
@@ -626,6 +728,7 @@
   	<property name="brand" value="Master Card" />
   	<property name="expirationDate" value="2024/06/12 00:00" />
   	<property name="cvv" value="123" />
+  	<property name="patron" ref="patron2Patron" />
   </bean>
   
   <bean id="creditCard03" class="acme.entities.creditCards.CreditCard" >
@@ -634,6 +737,7 @@
   	<property name="brand" value="Visa" />
   	<property name="expirationDate" value="2022/05/10 00:00" />
   	<property name="cvv" value="999" />
+  	<property name="patron" ref="patron3Patron" />
   </bean>
   
   <!-- Banners -->
