@@ -102,6 +102,12 @@ master.menu.entrepreneur.application.list = List applications by investment roun
 master.menu.investor = Investor
 master.menu.investor.application.list = My applications 
 
+# master.menu.bookkeeper ###################################################
+
+master.menu.bookkeeper = Bookkeeper
+master.menu.bookkeeper.investment-round.list-involved = Involved investment rounds
+master.menu.bookkeeper.investment-round.list-not-involved = Not involved investment rounds
+
 # master.menu.user-account ####################################################
 
 master.menu.user-account = Account

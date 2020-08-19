@@ -3,6 +3,7 @@ package acme.entities.investmentRounds;
 
 import java.util.Date;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
@@ -32,6 +33,7 @@ public class InvestmentRound extends DomainEntity {
 	// Attributes ---------------------------------------------
 
 	@NotBlank
+	@Column(unique = true)
 	private String				ticker;
 
 	@Temporal(TemporalType.TIMESTAMP)
@@ -47,6 +49,8 @@ public class InvestmentRound extends DomainEntity {
 	@NotBlank
 	private String				description;
 
+	@NotNull
+	@Valid
 	private Money				amount;
 
 	@URL

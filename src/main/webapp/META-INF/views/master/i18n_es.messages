@@ -103,6 +103,12 @@ master.menu.entrepreneur.application.list = Lista de solicitudes por rondas de i
 master.menu.investor = Inversor
 master.menu.investor.application.list = Mis solicitudes
 
+# master.menu.bookkeeper ###################################################
+
+master.menu.bookkeeper = Contable
+master.menu.bookkeeper.investment-round.list-involved = Rondas de inversión involucradas
+master.menu.bookkeeper.investment-round.list-not-involved = Rondas de inversión no involucradas
+
 # master.menu.user-account ####################################################
 
 master.menu.user-account = Cuenta
