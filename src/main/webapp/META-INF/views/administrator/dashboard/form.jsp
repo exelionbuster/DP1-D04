@@ -25,225 +25,62 @@ text-align: center}
 
 <br />
 <br />
+<acme:form>
+	<acme:form-integer code="administrator.dashboard.form.table.cell.total-notices" path="numberOfNotices"/>
+	<acme:form-integer code="administrator.dashboard.form.table.cell.total-tech-records" path="numberOfTechnologyRecords"/>
+	<acme:form-integer code="administrator.dashboard.form.table.cell.total-tool-records" path="numberOfToolRecords"/>
+	<br />
+	<br />
+	<h4>
+		<acme:message code="administrator.dashboard.form.table.title.min-money-active-inquiries"/>
+	</h4>
+	<acme:form-double code="administrator.dashboard.form.table.cell.stats.min" path="minimumMinMoneyActiveInquiries"/> 	&euro;
+	<acme:form-double code="administrator.dashboard.form.table.cell.stats.max" path="maximumMinMoneyActiveInquiries"/> 	&euro;
+	<acme:form-double code="administrator.dashboard.form.table.cell.stats.avg" path="avgMinMoneyActiveInquiries"/> 	&euro;
+	<acme:form-double code="administrator.dashboard.form.table.cell.stats.stddev" path="stddevMinMoneyActiveInquiries"/> 	&euro;
 
-<table>
-	<tr>
-		<td>
-			<acme:message code="administrator.dashboard.form.table.cell.total-notices"/>
-		</td>
-		<td>
-			<acme:print value="${ numberOfNotices}"/>
-		</td>
-	</tr>
-	<tr>
-		<td>
-			<acme:message code="administrator.dashboard.form.table.cell.total-tech-records"/>
-		</td>
-		<td>
-			<acme:print value="${ numberOfTechnologyRecords}"/>
-		</td>
-	</tr>
-	<tr>
-		<td>
-			<acme:message code="administrator.dashboard.form.table.cell.total-tool-records"/>
-		</td>
-		<td>
-			<acme:print value="${ numberOfToolRecords}"/>
-		</td>
-	</tr>
-</table>
-<br />
-<br />
-<table>
-	<tr>
-		<th colspan="2">
-			<acme:message code="administrator.dashboard.form.table.title.min-money-active-inquiries"/>
-		</th>
-	</tr>
-	<tr>
-		<td>
-			<acme:message code="administrator.dashboard.form.table.cell.stats.min"/>
-		</td>
-		<td>
-			<acme:print value="${ minimumMinMoneyActiveInquiries}"/> 	&euro;
-		</td>
-	</tr>
-	<tr>
-		<td>
-			<acme:message code="administrator.dashboard.form.table.cell.stats.max"/>
-		</td>
-		<td>
-			<acme:print value="${ maximumMinMoneyActiveInquiries}"/>	&euro;
-		</td>
-	</tr>
-	<tr>
-		<td>
-			<acme:message code="administrator.dashboard.form.table.cell.stats.avg"/>	
-		</td>
-		<td>
-			<acme:print value="${ avgMinMoneyActiveInquiries}"/>	&euro;
-		</td>
-	</tr>
-	<tr>
-		<td>
-			<acme:message code="administrator.dashboard.form.table.cell.stats.stddev"/>
-		</td>
-		<td>
-			<acme:print value="${ stddevMinMoneyActiveInquiries}"/>	&euro;
-		</td>
-	</tr>
-</table>
-<br />
-<br />
-<table>
-	<tr>
-		<th colspan="2">
-			<acme:message code="administrator.dashboard.form.table.title.max-money-active-inquiries"/>
-		</th>
-	</tr>
-	<tr>
-		<td>
-			<acme:message code="administrator.dashboard.form.table.cell.stats.min"/>
-		</td>
-		<td>
-			<acme:print value="${ minimumMaxMoneyActiveInquiries}"/>	&euro;
-		</td>
-	</tr>
-	<tr>
-		<td>
-			<acme:message code="administrator.dashboard.form.table.cell.stats.max"/>
-		</td>
-		<td>
-			<acme:print value="${ maximumMaxMoneyActiveInquiries}"/>	&euro;
-		</td>
-	</tr>
-	<tr>
-		<td>
-			<acme:message code="administrator.dashboard.form.table.cell.stats.avg"/>	
-		</td>
-		<td>
-			<acme:print value="${ avgMaxMoneyActiveInquiries}"/>	&euro;
-		</td>
-	</tr>
-	<tr>
-		<td>
-			<acme:message code="administrator.dashboard.form.table.cell.stats.stddev"/>
-		</td>
-		<td>
-			<acme:print value="${ stddevMaxMoneyActiveInquiries}"/>	&euro;
-		</td>
-	</tr>
-</table>
-<br />
-<br />
-<table>
-	<tr>
-		<th colspan="2">
-			<acme:message code="administrator.dashboard.form.table.title.min-money-active-overtures"/>
-		</th>
-	</tr>
-	<tr>
-		<td>
-			<acme:message code="administrator.dashboard.form.table.cell.stats.min"/>
-		</td>
-		<td>
-			<acme:print value="${ minimumMinMoneyActiveOvertures}"/>	&euro;
-		</td>
-	</tr>
-	<tr>
-		<td>
-			<acme:message code="administrator.dashboard.form.table.cell.stats.max"/>
-		</td>
-		<td>
-			<acme:print value="${ maximumMinMoneyActiveOvertures}"/>	&euro;
-		</td>
-	</tr>
-	<tr>
-		<td>
-			<acme:message code="administrator.dashboard.form.table.cell.stats.avg"/>	
-		</td>
-		<td>
-			<acme:print value="${ avgMinMoneyActiveOvertures}"/>	&euro;
-		</td>
-	</tr>
-	<tr>
-		<td>
-			<acme:message code="administrator.dashboard.form.table.cell.stats.stddev"/>
-		</td>
-		<td>
-			<acme:print value="${ stddevMinMoneyActiveOvertures}"/>	&euro;
-		</td>
-	</tr>
-</table>
-<br />
-<br />
-<table>
-	<tr>
-		<th colspan="2">
-			<acme:message code="administrator.dashboard.form.table.title.max-money-active-overtures"/>
-		</th>
-	</tr>
-	<tr>
-		<td>
-			<acme:message code="administrator.dashboard.form.table.cell.stats.min"/>
-		</td>
-		<td>
-			<acme:print value="${ minimumMaxMoneyActiveOvertures}"/>	&euro;
-		</td>
-	</tr>
-	<tr>
-		<td>
-			<acme:message code="administrator.dashboard.form.table.cell.stats.max"/>
-		</td>
-		<td>
-			<acme:print value="${ maximumMaxMoneyActiveOvertures}"/>	&euro;
-		</td>
-	</tr>
-	<tr>
-		<td>
-			<acme:message code="administrator.dashboard.form.table.cell.stats.avg"/>	
-		</td>
-		<td>
-			<acme:print value="${ avgMaxMoneyActiveOvertures}"/>	&euro;
-		</td>
-	</tr>
-	<tr>
-		<td>
-			<acme:message code="administrator.dashboard.form.table.cell.stats.stddev"/>
-		</td>
-		<td>
-			<acme:print value="${ stddevMaxMoneyActiveOvertures}"/>	&euro;
-		</td>
-	</tr>
-</table>
-<br />
-<br />
-<table>
-	<tr>
-		<td>
-			<acme:message code="administrator.dashboard.form.table.cell.inv-round-per-entrep"/>
-		</td>
-		<td>
-			<acme:print value="${ invRoundPerEntrep}"/>
-		</td>
-	</tr>
-	<tr>
-		<td>
-			<acme:message code="administrator.dashboard.form.table.cell.app-per-entrep"/>
-		</td>
-		<td>
-			<acme:print value="${ appPerEntrep}"/>
-		</td>
-	</tr>
-	<tr>
-		<td>
-			<acme:message code="administrator.dashboard.form.table.cell.app-per-investor"/>
-		</td>
-		<td>
-			<acme:print value="${ appPerInvestor}"/>
-		</td>
-	</tr>
-</table>
+	<br />
+	<br />
+	
+	<h4>
+		<acme:message code="administrator.dashboard.form.table.title.max-money-active-inquiries"/>
+	</h4>
+	<acme:form-double code="administrator.dashboard.form.table.cell.stats.min" path="minimumMaxMoneyActiveInquiries"/> 	&euro;
+	<acme:form-double code="administrator.dashboard.form.table.cell.stats.max" path="maximumMaxMoneyActiveInquiries"/> 	&euro;
+	<acme:form-double code="administrator.dashboard.form.table.cell.stats.avg" path="avgMaxMoneyActiveInquiries"/> 	&euro;
+	<acme:form-double code="administrator.dashboard.form.table.cell.stats.stddev" path="stddevMaxMoneyActiveInquiries"/> 	&euro;
+
+	<br />
+	<br />
+	
+	<h4>	
+		<acme:message code="administrator.dashboard.form.table.title.min-money-active-overtures"/>
+	</h4>
+	<acme:form-double code="administrator.dashboard.form.table.cell.stats.min" path="minimumMinMoneyActiveOvertures"/> 	&euro;
+	<acme:form-double code="administrator.dashboard.form.table.cell.stats.max" path="maximumMinMoneyActiveOvertures"/> 	&euro;
+	<acme:form-double code="administrator.dashboard.form.table.cell.stats.avg" path="avgMinMoneyActiveOvertures"/> 	&euro;
+	<acme:form-double code="administrator.dashboard.form.table.cell.stats.stddev" path="stddevMinMoneyActiveOvertures"/> 	&euro;
+
+	<br />
+	<br />
+	
+	<h4>
+		<acme:message code="administrator.dashboard.form.table.title.max-money-active-overtures"/>
+	</h4>
+	<acme:form-double code="administrator.dashboard.form.table.cell.stats.min" path="minimumMaxMoneyActiveOvertures"/> 	&euro;
+	<acme:form-double code="administrator.dashboard.form.table.cell.stats.max" path="maximumMaxMoneyActiveOvertures"/> 	&euro;
+	<acme:form-double code="administrator.dashboard.form.table.cell.stats.avg" path="avgMaxMoneyActiveOvertures"/> 	&euro;
+	<acme:form-double code="administrator.dashboard.form.table.cell.stats.stddev" path="stddevMaxMoneyActiveOvertures"/> 	&euro;
+	
+	<br />
+	<br />
+	<br />
+
+	<acme:form-double code="administrator.dashboard.form.table.cell.inv-round-per-entrep" path="invRoundPerEntrep"/>
+	<acme:form-double code="administrator.dashboard.form.table.cell.app-per-entrep" path="appPerEntrep"/>
+	<acme:form-double code="administrator.dashboard.form.table.cell.app-per-investor" path="appPerInvestor"/>
+
+</acme:form>
 <br />
 <br />
 
