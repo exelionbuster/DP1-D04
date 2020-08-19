@@ -119,6 +119,7 @@
        `id` integer not null,
         `version` integer not null,
         `activity_sectors` varchar(255),
+        `inv_round_kinds` varchar(255),
         `spam_words` varchar(255),
         `threshold` double precision,
         primary key (`id`)
@@ -141,6 +142,7 @@
         `expiration_date` datetime(6),
         `holder_name` varchar(255),
         `number` varchar(255),
+        `patron_id` integer not null,
         primary key (`id`)
     ) engine=InnoDB;
 
@@ -259,6 +261,17 @@
         primary key (`id`)
     ) engine=InnoDB;
 
+    create table `patron` (
+       `id` integer not null,
+        `version` integer not null,
+        `user_account_id` integer,
+        `activity_sector` varchar(255),
+        `organisation` varchar(255),
+        `profile` varchar(255),
+        `credit_card_id` integer,
+        primary key (`id`)
+    ) engine=InnoDB;
+
     create table `provider` (
        `id` integer not null,
         `version` integer not null,
@@ -327,6 +340,9 @@
     alter table `application` 
        add constraint UK_ao7wxw7e7mkj6g5q49yq2fw8d unique (`ticker`);
 
+    alter table `credit_card` 
+       add constraint UK_mre2b1pfmmoe2f6n3c60tom5q unique (`patron_id`);
+
     alter table `forum_authenticated` 
        add constraint UK_ja8okap5gw1dkb4e3hcnop8p7 unique (`involved_users_id`);
 
@@ -388,6 +404,11 @@
        foreign key (`user_account_id`) 
        references `user_account` (`id`);
 
+    alter table `credit_card` 
+       add constraint `FK31e9eqi896koc93q7yjs5yoox` 
+       foreign key (`patron_id`) 
+       references `patron` (`id`);
+
     alter table `entrepreneur` 
        add constraint FK_r6tqltqvrlh1cyy8rsj5pev1q 
        foreign key (`user_account_id`) 
@@ -432,6 +453,16 @@
        add constraint `FKni5vovfjiadoisvjqpvfx703d` 
        foreign key (`sender_id`) 
        references `authenticated` (`id`);
+
+    alter table `patron` 
+       add constraint `FKpj4cod0bcxwxg4nqv4f2xkikg` 
+       foreign key (`credit_card_id`) 
+       references `credit_card` (`id`);
+
+    alter table `patron` 
+       add constraint FK_8xx5nujhuio3advxc2freyu65 
+       foreign key (`user_account_id`) 
+       references `user_account` (`id`);
 
     alter table `provider` 
        add constraint FK_b1gwnjqm6ggy9yuiqm0o4rlmd 

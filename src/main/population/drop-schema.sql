@@ -43,6 +43,10 @@
        drop 
        foreign key FK_6cyha9f1wpj0dpbxrrjddrqed;
 
+    alter table `credit_card` 
+       drop 
+       foreign key `FK31e9eqi896koc93q7yjs5yoox`;
+
     alter table `entrepreneur` 
        drop 
        foreign key FK_r6tqltqvrlh1cyy8rsj5pev1q;
@@ -78,6 +82,14 @@
     alter table `message` 
        drop 
        foreign key `FKni5vovfjiadoisvjqpvfx703d`;
+
+    alter table `patron` 
+       drop 
+       foreign key `FKpj4cod0bcxwxg4nqv4f2xkikg`;
+
+    alter table `patron` 
+       drop 
+       foreign key FK_8xx5nujhuio3advxc2freyu65;
 
     alter table `provider` 
        drop 
@@ -130,6 +142,8 @@
     drop table if exists `notice`;
 
     drop table if exists `overture`;
+
+    drop table if exists `patron`;
 
     drop table if exists `provider`;
 
