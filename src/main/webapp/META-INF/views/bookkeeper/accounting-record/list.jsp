@@ -16,10 +16,8 @@
 
 <acme:list>
 
-	<acme:list-column code="bookkeeper.investment-round.list.label.title" path="title" width="30%"/>
-	<acme:list-column code="bookkeeper.investment-round.list.label.ticker" path="ticker" width="35%"/>
-	<acme:list-column code="bookkeeper.investment-round.list.label.kind" path="kind" width="35%"/>
-	
+	<acme:list-column code="bookkeeper.accounting-record.list.label.title" path="title" width="50%"/>
+	<acme:list-column code="bookkeeper.accounting-record.list.label.status" path="status" width="50%"/>
 		
 </acme:list>
 

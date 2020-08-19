@@ -21,4 +21,5 @@ bookkeeper.investment-round.form.label.amount = Cantidad:
 bookkeeper.investment-round.form.label.link = Enlace:
 
 bookkeeper.investment-round.form.button.activities = Actividades
+bookkeeper.investment-round.form.button.accounting-records = Registros contables
 bookkeeper.investment-round.form.button.return = Volver

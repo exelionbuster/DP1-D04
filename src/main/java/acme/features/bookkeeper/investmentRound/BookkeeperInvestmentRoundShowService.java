@@ -30,8 +30,10 @@ public class BookkeeperInvestmentRoundShowService implements AbstractShowService
 		assert entity != null;
 		assert model != null;
 
-		boolean aux = this.repository.hasActivities(entity.getId());
-		model.setAttribute("activities", aux);
+		boolean activities = this.repository.hasActivities(entity.getId());
+		boolean accRecords = this.repository.hasAccountingRecords(entity.getId());
+		model.setAttribute("activities", activities);
+		model.setAttribute("accRecords", accRecords);
 
 		request.unbind(entity, model, "ticker", "creationDate", "kind", "title", "description", "amount", "link");
 
