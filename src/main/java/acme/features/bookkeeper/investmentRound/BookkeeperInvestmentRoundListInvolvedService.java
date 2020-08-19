@@ -33,7 +33,7 @@ public class BookkeeperInvestmentRoundListInvolvedService implements AbstractLis
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "ticker", "title", "kind", "creationDate");
+		request.unbind(entity, model, "ticker", "title", "kind");
 
 	}
 
@@ -43,7 +43,7 @@ public class BookkeeperInvestmentRoundListInvolvedService implements AbstractLis
 
 		Collection<InvestmentRound> res;
 		Principal principal = request.getPrincipal();
-		int id = principal.getAccountId();
+		int id = principal.getActiveRoleId();
 		res = this.repository.findInvolvedInvestmentRound(id);
 
 		return res;

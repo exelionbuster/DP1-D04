@@ -5,7 +5,6 @@ import java.util.Collection;
 
 import org.springframework.data.jpa.repository.Query;
 
-import acme.entities.inquiries.Inquiry;
 import acme.entities.investmentRounds.InvestmentRound;
 import acme.framework.repositories.AbstractRepository;
 
@@ -17,6 +16,9 @@ public interface BookkeeperInvestmentRoundRepository extends AbstractRepository 
 	@Query("select distinct ar.investmentRound from AccountingRecord ar where ar.bookkeeper.id<>?1")
 	Collection<InvestmentRound> findNotInvolvedInvestmentRound(int id);
 
-	@Query("select a from Inquiry a where a.id = ?1")
-	Inquiry findOneById(int id);
+	@Query("select count(a)>0 from Activity a where a.investmentRound.id=?1")
+	boolean hasActivities(int id);
+
+	@Query("select ir from InvestmentRound ir where ir.id = ?1")
+	InvestmentRound findOneById(int id);
 }
