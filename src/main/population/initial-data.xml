@@ -151,7 +151,8 @@
 	<bean id="configuration1" class="acme.entities.configurations.Configuration">
 		<property name="spamWords" value="sex, hard core, viagra, cialis, Nigeria, you've won, million dolar "/>	
 		<property name="threshold" value="2.50"/>
-		<property name="activitySectors" value="Technology, Science, Arts, Business, Health"/>	
+		<property name="activitySectors" value="Technology; Science; Arts; Business; Health"/>
+		<property name="invRoundKinds" value="SEED; ANGEL; SERIES-A; SERIES-B; SERIES-C; BRIDGE"/>
 	</bean>
 	
 </beans>

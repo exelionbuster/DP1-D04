@@ -1,10 +1,14 @@
 
 package acme.features.administrator.banner;
 
+import java.util.HashSet;
+import java.util.Set;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.banners.Banner;
+import acme.entities.creditCards.CreditCard;
 import acme.features.administrator.creditCard.AdministratorCreditCardRepository;
 import acme.framework.components.Errors;
 import acme.framework.components.Model;
@@ -65,6 +69,21 @@ public class AdministratorBannerCreateService implements AbstractCreateService<A
 		assert entity != null;
 		assert errors != null;
 
+		if (errors.hasErrors()) {
+			Set<CreditCard> creditCards = new HashSet<CreditCard>(this.creditCardRepository.findMany());
+
+			if (request.getModel().getAttribute("creditCardId") != "") {
+
+				CreditCard cc = this.creditCardRepository.findOneById(Integer.parseInt((String) request.getModel().getAttribute("creditCardId")));
+				int id = cc.getId();
+				String number = cc.getNumber();
+
+				request.getModel().setAttribute("creditCardId", id);
+				request.getModel().setAttribute("creditCardNumber", number);
+				creditCards.remove(cc);
+			}
+			request.getModel().setAttribute("creditCards", creditCards);
+		}
 	}
 
 	@Override
