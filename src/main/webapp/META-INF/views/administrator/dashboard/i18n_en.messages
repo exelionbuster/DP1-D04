@@ -14,8 +14,16 @@ administrator.dashboard.form.table.title.max-money-active-inquiries	=	Maximum mo
 administrator.dashboard.form.table.title.min-money-active-overtures	=	Minimum money of the active overtures
 administrator.dashboard.form.table.title.max-money-active-overtures	=	Maximum money of the active overtures
 
+administrator.dashboard.form.table.cell.inv-round-per-entrep		=	Average investment rounds per entrepreneur
+administrator.dashboard.form.table.cell.app-per-entrep				= 	Average applications per entrepreneur
+administrator.dashboard.form.table.cell.app-per-investor			= 	Average applications per investor
+
 administrator.dashboard.form.chart.title.techs-by-sector			=	Technologies by sector
 administrator.dashboard.form.chart.title.tools-by-sector			=	Tools by sector
 
 administrator.dashboard.form.chart.title.techs-by-licence			=	Technologies by licence
 administrator.dashboard.form.chart.title.tools-by-licence			=	Tools by licence
+
+administrator.dashboard.form.chart.title.inv-round-by-kind			=	Investment rounds by kind
+
+administrator.dashboard.form.chart.title.apps-by-status				=	Applications by status

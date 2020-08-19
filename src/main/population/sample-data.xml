@@ -781,7 +781,7 @@
 		<property name="ticker" value="SSS-20-000002" />		
 		<property name="creationDate" value="2000/12/11 23:59" />
 		<property name="statement" value="example 2" />
-		<property name="status" value="accepted" />
+		<property name="status" value="rejected" />
 		<property name="offer">
 			<ref bean="money06"/>
 		</property>
@@ -793,7 +793,7 @@
 		<property name="ticker" value="SSS-20-000003" />		
 		<property name="creationDate" value="2000/12/11 23:59" />
 		<property name="statement" value="example 3" />
-		<property name="status" value="accepted" />
+		<property name="status" value="pending" />
 		<property name="offer">
 			<ref bean="money04"/>
 		</property>

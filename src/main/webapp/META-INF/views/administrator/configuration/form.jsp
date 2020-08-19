@@ -18,7 +18,7 @@
 	<acme:form-textarea code="administrator.configuration.form.label.spam-words" path="spamWords" />
 	<acme:form-double code="administrator.configuration.form.label.threshold" path="threshold" />
 	<acme:form-textarea code="administrator.configuration.form.label.activity-sectors" path="activitySectors" />
-	<acme:form-textarea code="administrator.configuration.form.label.inv-round-kinds" path="invRoundKinds" />
+	<acme:form-textarea code="administrator.configuration.form.label.inv-round-kinds" path="invRoundKinds" readonly="true" />
 	
 	<acme:form-submit test="${command == 'show'}"
 		code="administrator.configuration.form.button.update"

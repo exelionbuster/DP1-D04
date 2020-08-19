@@ -40,6 +40,10 @@ public class Dashboard implements Serializable {
 	Double						avgMaxMoneyActiveOvertures;
 	Double						stddevMaxMoneyActiveOvertures;
 
+	Double						invRoundPerEntrep;
+	Double						appPerEntrep;
+	Double						appPerInvestor;
+
 	List<String>				techRecordsSectors;
 	List<Long>					techRecordsBySector;
 
@@ -48,5 +52,11 @@ public class Dashboard implements Serializable {
 
 	List<Integer>				techRecordsLicence;
 	List<Integer>				toolRecordsLicence;
+
+	List<String>				invRoundKinds;
+	List<Long>					invRoundsByKind;
+
+	List<String>				appStatus;
+	List<Long>					appByStatus;
 
 }

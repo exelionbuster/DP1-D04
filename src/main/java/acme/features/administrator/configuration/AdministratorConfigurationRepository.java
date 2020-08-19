@@ -13,4 +13,6 @@ public interface AdministratorConfigurationRepository extends AbstractRepository
 	@Query("select c from Configuration c")
 	Configuration findOne();
 
+	@Query("select c.invRoundKinds from Configuration c")
+	String findInvRoundKinds();
 }
