@@ -3,7 +3,6 @@ package acme.features.administrator.dashboard;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -45,27 +44,59 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 
 		List<Object[]> activeInquiriesMinMoneyStats = new ArrayList<Object[]>(this.repository.activeInquiriesMinMoneyStats());
 		Double minimumMinMoneyActiveInquiries = (Double) activeInquiriesMinMoneyStats.get(0)[0];
+		String minMinInquiriesCurrency = String.format("%.2f", minimumMinMoneyActiveInquiries) + " €";
+		model.setAttribute("minMinInquiriesCurrency", minMinInquiriesCurrency);
 		Double maximumMinMoneyActiveInquiries = (Double) activeInquiriesMinMoneyStats.get(0)[1];
+		String maxMinInquiriesCurrency = String.format("%.2f", maximumMinMoneyActiveInquiries) + " €";
+		model.setAttribute("maxMinInquiriesCurrency", maxMinInquiriesCurrency);
 		Double avgMinMoneyActiveInquiries = (Double) activeInquiriesMinMoneyStats.get(0)[2];
+		String avgMinInquiriesCurrency = String.format("%.2f", avgMinMoneyActiveInquiries) + " €";
+		model.setAttribute("avgMinInquiriesCurrency", avgMinInquiriesCurrency);
 		Double stddevMinMoneyActiveInquiries = (Double) activeInquiriesMinMoneyStats.get(0)[3];
+		String stddevMinInquiriesCurrency = String.format("%.2f", stddevMinMoneyActiveInquiries) + " €";
+		model.setAttribute("stddevMinInquiriesCurrency", stddevMinInquiriesCurrency);
 
 		List<Object[]> activeInquiriesMaxMoneyStats = new ArrayList<Object[]>(this.repository.activeInquiriesMaxMoneyStats());
 		Double minimumMaxMoneyActiveInquiries = (Double) activeInquiriesMaxMoneyStats.get(0)[0];
+		String minMaxInquiriesCurrency = String.format("%.2f", minimumMaxMoneyActiveInquiries) + " €";
+		model.setAttribute("minMaxInquiriesCurrency", minMaxInquiriesCurrency);
 		Double maximumMaxMoneyActiveInquiries = (Double) activeInquiriesMaxMoneyStats.get(0)[1];
+		String maxMaxInquiriesCurrency = String.format("%.2f", maximumMaxMoneyActiveInquiries) + " €";
+		model.setAttribute("maxMaxInquiriesCurrency", maxMaxInquiriesCurrency);
 		Double avgMaxMoneyActiveInquiries = (Double) activeInquiriesMaxMoneyStats.get(0)[2];
+		String avgMaxInquiriesCurrency = String.format("%.2f", avgMaxMoneyActiveInquiries) + " €";
+		model.setAttribute("avgMaxInquiriesCurrency", avgMaxInquiriesCurrency);
 		Double stddevMaxMoneyActiveInquiries = (Double) activeInquiriesMaxMoneyStats.get(0)[3];
+		String stddevMaxInquiriesCurrency = String.format("%.2f", stddevMaxMoneyActiveInquiries) + " €";
+		model.setAttribute("stddevMaxInquiriesCurrency", stddevMaxInquiriesCurrency);
 
 		List<Object[]> activeOverturesMinMoneyStats = new ArrayList<Object[]>(this.repository.activeOverturesMinMoneyStats());
 		Double minimumMinMoneyActiveOvertures = (Double) activeOverturesMinMoneyStats.get(0)[0];
+		String minMinOverturesCurrency = String.format("%.2f", minimumMinMoneyActiveOvertures) + " €";
+		model.setAttribute("minMinOverturesCurrency", minMinOverturesCurrency);
 		Double maximumMinMoneyActiveOvertures = (Double) activeOverturesMinMoneyStats.get(0)[1];
+		String maxMinOverturesCurrency = String.format("%.2f", maximumMinMoneyActiveOvertures) + " €";
+		model.setAttribute("maxMinOverturesCurrency", maxMinOverturesCurrency);
 		Double avgMinMoneyActiveOvertures = (Double) activeOverturesMinMoneyStats.get(0)[2];
+		String avgMinOverturesCurrency = String.format("%.2f", avgMinMoneyActiveOvertures) + " €";
+		model.setAttribute("avgMinOverturesCurrency", avgMinOverturesCurrency);
 		Double stddevMinMoneyActiveOvertures = (Double) activeOverturesMinMoneyStats.get(0)[3];
+		String stddevMinOverturesCurrency = String.format("%.2f", stddevMinMoneyActiveOvertures) + " €";
+		model.setAttribute("stddevMinOverturesCurrency", stddevMinOverturesCurrency);
 
 		List<Object[]> activeOverturesMaxMoneyStats = new ArrayList<Object[]>(this.repository.activeOverturesMaxMoneyStats());
 		Double minimumMaxMoneyActiveOvertures = (Double) activeOverturesMaxMoneyStats.get(0)[0];
+		String minMaxOverturesCurrency = String.format("%.2f", minimumMaxMoneyActiveOvertures) + " €";
+		model.setAttribute("minMaxOverturesCurrency", minMaxOverturesCurrency);
 		Double maximumMaxMoneyActiveOvertures = (Double) activeOverturesMaxMoneyStats.get(0)[1];
+		String maxMaxOverturesCurrency = String.format("%.2f", maximumMaxMoneyActiveOvertures) + " €";
+		model.setAttribute("maxMaxOverturesCurrency", maxMaxOverturesCurrency);
 		Double avgMaxMoneyActiveOvertures = (Double) activeOverturesMaxMoneyStats.get(0)[2];
+		String avgMaxOverturesCurrency = String.format("%.2f", avgMaxMoneyActiveOvertures) + " €";
+		model.setAttribute("avgMaxOverturesCurrency", avgMaxOverturesCurrency);
 		Double stddevMaxMoneyActiveOvertures = (Double) activeOverturesMaxMoneyStats.get(0)[3];
+		String stddevMaxOverturesCurrency = String.format("%.2f", stddevMaxMoneyActiveOvertures) + " €";
+		model.setAttribute("stddevMaxOverturesCurrency", stddevMaxOverturesCurrency);
 
 		Double invRoundPerEntrep = this.repository.invRoundPerEntrep();
 		Double appPerEntrep = this.repository.appPerEntrep();
@@ -105,10 +136,10 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 				invRoundsByKind.add(0L);
 			}
 		}
-		
-//		Long invRoundsByKindScale = Collections.max(invRoundsByKind) + 1;
-//		model.setAttribute("invRoundsByKindScale", invRoundsByKindScale);
-		
+
+		//		Long invRoundsByKindScale = Collections.max(invRoundsByKind) + 1;
+		//		model.setAttribute("invRoundsByKindScale", invRoundsByKindScale);
+
 		List<Object[]> appStatusAndNumber = new ArrayList<>(this.repository.appByStatus());
 		List<String> appStatus = new ArrayList<>();
 		List<Long> appByStatus = new ArrayList<>();
@@ -154,10 +185,10 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 		entity.setToolRecordsBySector(toolRecordsBySector);
 
 		entity.setToolRecordsLicence(toolRecordsLicence);
-		
+
 		entity.setInvRoundKinds(invRoundKinds);
 		entity.setInvRoundsByKind(invRoundsByKind);
-		
+
 		entity.setAppStatus(appStatus);
 		entity.setAppByStatus(appByStatus);
 

@@ -4,10 +4,6 @@
 <%@taglib prefix="acme" tagdir="/WEB-INF/tags"%>
 
 <style>
-table, th, td {
-  border: 1px solid black;
-  border-collapse: collapse;
-}
 div.containerL{
 display: inline-block;
 width: 40%;
@@ -34,10 +30,10 @@ text-align: center}
 	<h4>
 		<acme:message code="administrator.dashboard.form.table.title.min-money-active-inquiries"/>
 	</h4>
-	<acme:form-double code="administrator.dashboard.form.table.cell.stats.min" path="minimumMinMoneyActiveInquiries"/> 	&euro;
-	<acme:form-double code="administrator.dashboard.form.table.cell.stats.max" path="maximumMinMoneyActiveInquiries"/> 	&euro;
-	<acme:form-double code="administrator.dashboard.form.table.cell.stats.avg" path="avgMinMoneyActiveInquiries"/> 	&euro;
-	<acme:form-double code="administrator.dashboard.form.table.cell.stats.stddev" path="stddevMinMoneyActiveInquiries"/> 	&euro;
+	<acme:form-textbox code="administrator.dashboard.form.table.cell.stats.min" path="minMinInquiriesCurrency"/>
+	<acme:form-textbox code="administrator.dashboard.form.table.cell.stats.max" path="maxMinInquiriesCurrency"/>
+	<acme:form-textbox code="administrator.dashboard.form.table.cell.stats.avg" path="avgMinInquiriesCurrency"/>
+	<acme:form-textbox code="administrator.dashboard.form.table.cell.stats.stddev" path="stddevMinInquiriesCurrency"/>
 
 	<br />
 	<br />
@@ -45,10 +41,10 @@ text-align: center}
 	<h4>
 		<acme:message code="administrator.dashboard.form.table.title.max-money-active-inquiries"/>
 	</h4>
-	<acme:form-double code="administrator.dashboard.form.table.cell.stats.min" path="minimumMaxMoneyActiveInquiries"/> 	&euro;
-	<acme:form-double code="administrator.dashboard.form.table.cell.stats.max" path="maximumMaxMoneyActiveInquiries"/> 	&euro;
-	<acme:form-double code="administrator.dashboard.form.table.cell.stats.avg" path="avgMaxMoneyActiveInquiries"/> 	&euro;
-	<acme:form-double code="administrator.dashboard.form.table.cell.stats.stddev" path="stddevMaxMoneyActiveInquiries"/> 	&euro;
+	<acme:form-money code="administrator.dashboard.form.table.cell.stats.min" path="minMaxInquiriesCurrency"/>
+	<acme:form-money code="administrator.dashboard.form.table.cell.stats.max" path="maxMaxInquiriesCurrency"/>
+	<acme:form-money code="administrator.dashboard.form.table.cell.stats.avg" path="avgMaxInquiriesCurrency"/>
+	<acme:form-money code="administrator.dashboard.form.table.cell.stats.stddev" path="stddevMaxInquiriesCurrency"/>
 
 	<br />
 	<br />
@@ -56,10 +52,10 @@ text-align: center}
 	<h4>	
 		<acme:message code="administrator.dashboard.form.table.title.min-money-active-overtures"/>
 	</h4>
-	<acme:form-double code="administrator.dashboard.form.table.cell.stats.min" path="minimumMinMoneyActiveOvertures"/> 	&euro;
-	<acme:form-double code="administrator.dashboard.form.table.cell.stats.max" path="maximumMinMoneyActiveOvertures"/> 	&euro;
-	<acme:form-double code="administrator.dashboard.form.table.cell.stats.avg" path="avgMinMoneyActiveOvertures"/> 	&euro;
-	<acme:form-double code="administrator.dashboard.form.table.cell.stats.stddev" path="stddevMinMoneyActiveOvertures"/> 	&euro;
+	<acme:form-money code="administrator.dashboard.form.table.cell.stats.min" path="minMinOverturesCurrency"/>
+	<acme:form-money code="administrator.dashboard.form.table.cell.stats.max" path="maxMinOverturesCurrency"/>
+	<acme:form-money code="administrator.dashboard.form.table.cell.stats.avg" path="avgMinOverturesCurrency"/>
+	<acme:form-money code="administrator.dashboard.form.table.cell.stats.stddev" path="stddevMinOverturesCurrency"/>
 
 	<br />
 	<br />
@@ -67,18 +63,18 @@ text-align: center}
 	<h4>
 		<acme:message code="administrator.dashboard.form.table.title.max-money-active-overtures"/>
 	</h4>
-	<acme:form-double code="administrator.dashboard.form.table.cell.stats.min" path="minimumMaxMoneyActiveOvertures"/> 	&euro;
-	<acme:form-double code="administrator.dashboard.form.table.cell.stats.max" path="maximumMaxMoneyActiveOvertures"/> 	&euro;
-	<acme:form-double code="administrator.dashboard.form.table.cell.stats.avg" path="avgMaxMoneyActiveOvertures"/> 	&euro;
-	<acme:form-double code="administrator.dashboard.form.table.cell.stats.stddev" path="stddevMaxMoneyActiveOvertures"/> 	&euro;
+	<acme:form-money code="administrator.dashboard.form.table.cell.stats.min" path="minMaxOverturesCurrency"/>
+	<acme:form-money code="administrator.dashboard.form.table.cell.stats.max" path="maxMaxOverturesCurrency"/>
+	<acme:form-money code="administrator.dashboard.form.table.cell.stats.avg" path="avgMaxOverturesCurrency"/>
+	<acme:form-money code="administrator.dashboard.form.table.cell.stats.stddev" path="stddevMaxOverturesCurrency"/>
 	
 	<br />
 	<br />
 	<br />
 
-	<acme:form-double code="administrator.dashboard.form.table.cell.inv-round-per-entrep" path="invRoundPerEntrep"/>
-	<acme:form-double code="administrator.dashboard.form.table.cell.app-per-entrep" path="appPerEntrep"/>
-	<acme:form-double code="administrator.dashboard.form.table.cell.app-per-investor" path="appPerInvestor"/>
+	<acme:form-money code="administrator.dashboard.form.table.cell.inv-round-per-entrep" path="invRoundPerEntrep"/>
+	<acme:form-money code="administrator.dashboard.form.table.cell.app-per-entrep" path="appPerEntrep"/>
+	<acme:form-money code="administrator.dashboard.form.table.cell.app-per-investor" path="appPerInvestor"/>
 
 </acme:form>
 <br />
