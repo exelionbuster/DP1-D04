@@ -75,6 +75,7 @@
         `slogan` varchar(255),
         `target` varchar(255),
         `credit_card_id` integer,
+        `patron_id` integer not null,
         primary key (`id`)
     ) engine=InnoDB;
 
@@ -346,6 +347,9 @@
     alter table `forum_authenticated` 
        add constraint UK_ja8okap5gw1dkb4e3hcnop8p7 unique (`involved_users_id`);
 
+    alter table `investment_round` 
+       add constraint UK_408l1ohatdkkut5bkt0eu6ifs unique (`ticker`);
+
     alter table `user_account` 
        add constraint UK_castjbvpeeus0r8lbpehiu0e4 unique (`username`);
 
@@ -393,6 +397,11 @@
        add constraint `FKr19baq0bri0akndc7ruwhngy4` 
        foreign key (`credit_card_id`) 
        references `credit_card` (`id`);
+
+    alter table `banner` 
+       add constraint `FKdocr1jjfgwx9ef5jbf675l360` 
+       foreign key (`patron_id`) 
+       references `patron` (`id`);
 
     alter table `bookkeeper` 
        add constraint FK_krvjp9eaqyapewl2igugbo9o8 
