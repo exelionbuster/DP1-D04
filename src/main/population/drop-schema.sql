@@ -35,6 +35,10 @@
        drop 
        foreign key `FKr19baq0bri0akndc7ruwhngy4`;
 
+    alter table `banner` 
+       drop 
+       foreign key `FKdocr1jjfgwx9ef5jbf675l360`;
+
     alter table `bookkeeper` 
        drop 
        foreign key FK_krvjp9eaqyapewl2igugbo9o8;
