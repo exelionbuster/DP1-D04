@@ -775,7 +775,7 @@
   	<property name="slogan" value="La estrella Vega de nuevo" />
   	<property name="target" value="https://es.wikipedia.org/" />
   	<property name="creditCard">
-  		<ref bean="creditCard02"/>
+  		<ref bean="creditCard03"/>
   	</property>
   	<property name="patron" ref="patron3Patron" />
   </bean>
