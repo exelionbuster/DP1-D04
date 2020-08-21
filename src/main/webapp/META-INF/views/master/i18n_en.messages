@@ -104,6 +104,12 @@ master.menu.bookkeeper = Bookkeeper
 master.menu.bookkeeper.investment-round.list-involved = Involved investment rounds
 master.menu.bookkeeper.investment-round.list-not-involved = Not involved investment rounds
 
+
+# master.menu.patron ###################################################
+
+master.menu.patron = Patron
+master.menu.patron.banner.list-mine = My banners
+
 # master.menu.user-account ####################################################
 
 master.menu.user-account = Account

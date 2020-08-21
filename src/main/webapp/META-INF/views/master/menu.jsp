@@ -104,6 +104,10 @@
 			<acme:menu-suboption code="master.menu.bookkeeper.investment-round.list-not-involved" action="/bookkeeper/investment-round/list-not-involved" />
 		</acme:menu-option>
 		
+		<acme:menu-option code="master.menu.patron" access="hasRole('Patron')">
+			<acme:menu-suboption code="master.menu.patron.banner.list-mine" action="/patron/banner/list-mine" />
+		</acme:menu-option>
+		
 	</acme:menu-left>
 
 	<acme:menu-right>
