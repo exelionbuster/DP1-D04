@@ -136,13 +136,15 @@ bg=yellow</panel_attributes>
       <x>380</x>
       <y>230</y>
       <w>220</w>
-      <h>70</h>
+      <h>120</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Enum&gt;&gt;
 CustomCommand
 --
-
-
++ LIST_ACTIVE
++ LIST_MINE
++ LIST_INVOLVED 
++ LIST_NOT_INVOLVED
 bg=orange</panel_attributes>
     <additional_attributes/>
   </element>
