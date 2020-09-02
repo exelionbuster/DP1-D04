@@ -17,6 +17,11 @@
 		<acme:form-submit test="${command != 'create'}" method="get" code="entrepreneur.investment-round.form.button.activities" action="/entrepreneur/activity/list?id=${id}"/>
 	</jstl:if>
 	
+	<jstl:if test="${accountingRecords != null}">
+		<acme:form-return code="entrepreneur.investment-round.form.button.accounting-records" action="/authenticated/accounting-record/list?investmentRoundId=${id}"/>
+	</jstl:if>
+	
+	
 	<acme:form-return code="entrepreneur.investment-round.form.button.return" />
 		
 </acme:form>

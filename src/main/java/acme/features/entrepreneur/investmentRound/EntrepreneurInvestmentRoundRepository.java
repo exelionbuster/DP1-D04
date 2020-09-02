@@ -17,6 +17,7 @@ import java.util.Collection;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
+import acme.entities.accountingRecords.AccountingRecord;
 import acme.entities.investmentRounds.InvestmentRound;
 import acme.framework.repositories.AbstractRepository;
 
@@ -28,4 +29,8 @@ public interface EntrepreneurInvestmentRoundRepository extends AbstractRepositor
 
 	@Query("select a from InvestmentRound a where a.id = ?1")
 	InvestmentRound findOneById(int id);
+
+	@Query("select ar from AccountingRecord ar where ar.investmentRound.id = ?1 and ar.draft=false")
+	Collection<AccountingRecord> findAllByInvestmentRoundId(int id);
+
 }

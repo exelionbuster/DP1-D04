@@ -17,6 +17,7 @@ import java.util.Collection;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import acme.entities.accountingRecords.AccountingRecord;
 import acme.entities.activities.Activity;
 import acme.entities.investmentRounds.InvestmentRound;
 import acme.entities.roles.Entrepreneur;
@@ -51,6 +52,14 @@ public class EntrepreneurInvestmentRoundShowService implements AbstractShowServi
 		assert request != null;
 		assert entity != null;
 		assert model != null;
+
+		Collection<AccountingRecord> accountingRecords = this.repository.findAllByInvestmentRoundId(entity.getId());
+
+		if (!accountingRecords.isEmpty()) {
+			model.setAttribute("accountingRecords", accountingRecords);
+		} else {
+			model.setAttribute("accountingRecords", null);
+		}
 
 		Collection<Activity> activities = this.activityRepository.findActivitiesByInvestmentRound(entity.getId());
 
